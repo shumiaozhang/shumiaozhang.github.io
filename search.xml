@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>第二次测试</title>
+      <link href="/2018/09/28/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95/"/>
+      <url>/2018/09/28/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>aaf<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>如何搭建HEOX个人博客</title>
+      <link href="/2018/09/28/%E6%90%AD%E5%BB%BAHEXO%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2018/09/28/%E6%90%AD%E5%BB%BAHEXO%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="搭建一个基于-github-的-HEXO-个人博客"><a href="#搭建一个基于-github-的-HEXO-个人博客" class="headerlink" title="搭建一个基于 github 的 HEXO 个人博客"></a>搭建一个基于 github 的 HEXO 个人博客</h1><h2 id="需要的环境"><a href="#需要的环境" class="headerlink" title="需要的环境"></a>需要的环境</h2><ol><li>node<ol><li>node 就是一个 js 的运行环境而已</li><li>搭建博客需要用到一个辅助工具 <code>hexo-cli</code></li></ol></li><li>npm<ol><li>是包管理器</li><li>在安装 node 的时候会自动一并的安装好</li><li>资源服务器在国外,所以在使用会有可能已经提交了,但没有显示出来,只要等待一些时间即可。</li><li>常用指令<ol><li><code>npm install 包名</code> 或者 <code>npm i 包名</code>    =&gt; 下载</li><li><code>npm uninstall 包名</code>  =&gt; 卸载</li><li><code>npm i 包名@版本号</code>  =&gt; 下载执行版本的包</li></ol></li><li><code>npm i</code>  =&gt; 会检索当前文件夹下面的 package.json 文件<ul><li>直接下载所有依赖</li></ul></li><li>之所以使用它，是因为在使用 <code>hexo-cli</code> 这个工具的时候，也要下载一些依赖</li></ol></li><li>github 的账号<ol><li>因为目前做的是基于 github 的，所以一定要有一个账号</li><li>有一天你作用在自己的服务器，自己的域名上面</li></ol></li><li>git 环境<ol><li>用来上传我们写的内容的</li></ol></li></ol><h2 id="部署一个开发环境"><a href="#部署一个开发环境" class="headerlink" title="部署一个开发环境"></a>部署一个开发环境</h2><ul><li>这个环境只需要一次就可以了</li><li>只需要一个东西</li><li>hexo-cli</li><li>怎么安装<ol><li>用 npm 去下载这个 hexo-cli 脚手架  <code>npm i -g hexo-cli</code></li><li>这个环境就安装完成了</li><li>接下来就是进行 hexo 博客的搭建了</li><li><code>hexo -v</code> 如果能出现版本号就是安装成功了</li></ol></li></ul><h2 id="开始搭建博客"><a href="#开始搭建博客" class="headerlink" title="开始搭建博客"></a>开始搭建博客</h2><h3 id="第一次搭建"><a href="#第一次搭建" class="headerlink" title="第一次搭建"></a>第一次搭建</h3><ol><li><p>找到一个你喜欢的位置，放置一个文件夹，在文件夹内部打开 cmd </p></li><li><p>初始化一个 博客的文件夹结构（hexo-cli帮我们做）</p><ul><li>会帮我们自动搭建好一个内容的结构</li><li>会自动帮我们下载依赖包 npm i</li><li>已经完成就不需要关了（暂时）</li></ul></li><li><p>是启动一个本地服务器，可以本地预览我的博客</p><ul><li><code>hexo s</code> 这个指令启动本地服务器</li></ul></li><li><p>把他上传到 github，做成一个线上的网站来看，创建一个仓库</p><ul><li>一个 github 账号只能出一个 博客</li><li>仓库名称必须是 <code>你的github账号.github.io</code></li><li>去 hexo 的文件夹中配置你的仓库信息</li></ul></li><li><p>配置仓库信息</p><ul><li><p>找到 config.yml 的文件</p></li><li><p>拉倒最下面</p></li><li><p>找到 type</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:cyfresh/cyfresh.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li></ul></li><li><p>上传文件</p><ul><li><code>hexo generate</code> 部署那些文件准备上线 简写 <code>hexo g</code><ul><li>有可能会报错</li><li>如果报错了 <code>npm i hexo</code></li><li>然后重新执行 <code>hexo g</code></li></ul></li><li>正式上传 <code>hexo deploy</code> 这个是上传的指令 简写 <code>hexo d</code><ul><li>有可能会报错</li><li>如果报错了 <code>npm i hexo-deployer-git</code></li><li>然后重新执行 <code>hexo g</code> 然后 <code>hexo d</code></li></ul></li></ul></li><li><p>上传成功</p><ul><li>线上打开了</li><li>你的github账户.github.io</li><li>settings里面直接点击</li></ul></li><li><p>注意：</p><ul><li>因为 github 的服务器也在国外</li><li>有的时候可能你写完文章上传了，但是你去页面上看没有,过一会就会看到</li></ul></li></ol><h3 id="后期书写和上传"><a href="#后期书写和上传" class="headerlink" title="后期书写和上传"></a>后期书写和上传</h3><ol><li>找到之前建立博客的文件夹，在文件夹内部打开 cmd</li><li>新建一片文章 <code>hexo new 文件名</code></li><li>直接找到文章还是书写</li><li>进行本地测试调试(开启服务器,查看<code>第一次搭建的第三步</code>)</li><li>上传内容<ul><li><code>hexo g</code> </li><li><code>hexo d</code></li></ul></li></ol><h2 id="设置一个皮肤"><a href="#设置一个皮肤" class="headerlink" title="设置一个皮肤"></a>设置一个皮肤</h2><ol><li>百度一下，找到一个自己喜欢的皮肤主题</li><li>克隆下来(git clone + 主题地址)</li><li>克隆下来以后是一个 themes 文件夹，我们要找到这个文件夹里面的内容找主题名称的文件夹（next）</li><li>把 next 这个文件夹放在我们博客的目录内<code>blog/themes</code>,其他的主题颜色类似,只要最终放在themes文件夹即可</li><li>设置主题，来到 config.yml 文件内部（这个是对 hexo 进行的配置）<ul><li>找到 <code>theme: landscape</code></li><li>把后面的名称改成你的主题名称 next</li></ul></li><li>在 themes/next/config.yml 的文件，这个文件是对主题进行的一些配置</li><li>next主题下载地址: <a href="https://github.com/iissnan/hexo-theme-next themes/next" target="_blank" rel="noopener">next主题名下载地址</a></li><li>hexo-theme-yelee主题下载地址: <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="noopener">hexo-theme-yelee主题名下载地址</a></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/09/28/hello-world/"/>
+      <url>/2018/09/28/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+  
+  
+</search>
